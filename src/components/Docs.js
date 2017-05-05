@@ -73,6 +73,18 @@ class Docs extends Component {
 
 	  	} else if (this.props.type == 'actions') {
 
+	  		return <table>
+	  			<thead>
+	  				<tr><th>Дата начала</th><th>Продолжительность</th><th>Бренд</th><th>Активности</th><th>Количество</th><th>Закрывающ</th><th>Договор</th><th>Статус</th><th>Комментарий</th></tr>
+	  			</thead>
+	  			<tbody>
+
+	  			
+
+	  			</tbody>
+	  		</table>;
+
+
 	  	} else if (this.props.type == 'calls') {
 			return this.allCurrentContent().map((docObj, i) =>
 	  		<div key={i}>
