@@ -1854,22 +1854,6 @@ var data = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { Component } from 'react';
 
 import _ from 'lodash';
@@ -1943,7 +1927,7 @@ class App extends Component {
 		_.forEach(c.brands, function (id, i) {
 
 			_.forEach(_this.brands, function (brand, i) {
-				if (brand.id ==  id) {
+				if (brand.id ===  id) {
 					// console.log(brand.name);
 					arr.push(brand);
 				}
@@ -1952,20 +1936,13 @@ class App extends Component {
 			return arr
 	}
 
-
-
-
-	defineContent(c) {
-
-	}
-
   render() {
 	return (
 	  <div className="App">
 
-	   <Companies data = {this.companies} companyClick={this.companyClick.bind(this)}/>
-	   <Brands data = {this.state.currentBrands} managers={this.managers} brandClick={this.brandClick.bind(this)}/>
-	   <Docs content = {this.allContent[this.state.currentDoctype]} ids = {this.brands[this.state.currentBrand].content[this.state.currentDoctype]} docTypeClick={this.docTypeClick.bind(this)} type={this.state.currentDoctype} />
+	   <Companies data={this.companies} companyClick={this.companyClick.bind(this)}/>
+	   <Brands data={this.state.currentBrands} managers={this.managers} brandClick={this.brandClick.bind(this)}/>
+	   <Docs content={this.allContent[this.state.currentDoctype]} ids={this.brands[this.state.currentBrand].content[this.state.currentDoctype]} docTypeClick={this.docTypeClick.bind(this)} type={this.state.currentDoctype} />
 
 	  </div>
 

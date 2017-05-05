@@ -8,12 +8,7 @@ class Docs extends Component {
    constructor(props) {
 	super(props);
 
-	// console.log(props);
-
-
-
-
-	// this.handleClick = this.handleClick.bind(this);
+	console.log(props);
   }
 
   	allCurrentContent() { // весь контент для текущей компании и текущего бренда текущего типа документов
@@ -24,7 +19,7 @@ class Docs extends Component {
   		_.forEach(_this.props.content,  function(doc, i)  {
   			_.forEach(_this.props.ids,  function(id, i)  {
   				// console.log(doc, id);
-  				if (doc.id == id) {
+  				if (doc.id === id) {
   					arr.push(doc);
   				}
   			});
@@ -35,15 +30,8 @@ class Docs extends Component {
   
 
   renderList (argument) {
-  	// return this.allCurrentContent();
-  	// console.log(this.props.ids);
 
-/*	 	return this.props.ids.map((id, index) =>
-	  	<li key={index}>{id}</li>
-	  	);*/
-
-
-	  	if (this.props.type == 'contacts') {
+	  	if (this.props.type === 'contacts') {
 
 
 	  	return this.allCurrentContent().map((docObj, i) =>
@@ -59,7 +47,7 @@ class Docs extends Component {
 	  		<hr/>
 	  		</div>);
 
-	  	} else if (this.props.type == 'docs') {
+	  	} else if (this.props.type === 'docs') {
 
 			return this.allCurrentContent().map((docObj, i) =>	  		
 	  		<div key={i}>
@@ -71,7 +59,7 @@ class Docs extends Component {
 	  		<hr/>
 	  		</div>);
 
-	  	} else if (this.props.type == 'actions') {
+	  	} else if (this.props.type === 'actions') {
 
 	  		return <table>
 	  			<thead>
@@ -85,7 +73,7 @@ class Docs extends Component {
 	  		</table>;
 
 
-	  	} else if (this.props.type == 'calls') {
+	  	} else if (this.props.type === 'calls') {
 			return this.allCurrentContent().map((docObj, i) =>
 	  		<div key={i}>
 	  		<div>id {docObj.id}</div>
@@ -101,24 +89,11 @@ class Docs extends Component {
 
   }
 
-  handleClick(c) {
-  	// console.log(c.com, this);
-
-	// this.setState({
-	//   currentCompany: 0
-	// })
-  }
-
   typeChange(type)
   {
   	console.log(type);
   	this.props.docTypeClick(type)
   }
-
-
-
-
-// console.log( this.props , props);
 
 
   render() {
@@ -135,10 +110,6 @@ class Docs extends Component {
 	  </div>
 	);
   }
-
-
-
-
 
 }
 

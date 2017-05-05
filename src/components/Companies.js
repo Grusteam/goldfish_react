@@ -31,9 +31,6 @@ class Companies extends Component {
   }
 
 
-
-
-
 }
 
 export default Companies;

@@ -23,7 +23,7 @@ class Brands extends Component {
   			// console.log(id, _this.props);
   			_.forEach(_this.props.managers,  function(obj, i)  {
   				// console.log(obj.id);
-  				if (obj.id == id) {
+  				if (obj.id === id) {
   					managers.push(obj.name + ', ');
   					return false;
   				}
@@ -62,10 +62,6 @@ class Brands extends Component {
 	  </div>
 	);
   }
-
-
-
-
 
 }
 

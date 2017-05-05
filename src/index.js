@@ -10,9 +10,3 @@ ReactDOM.render(
   <App />,
   document.getElementById('first')
 );
-
-
-// ReactDOM.render(
-//   <Companies />,
-//   document.getElementById('second')
-// );
