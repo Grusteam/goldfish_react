@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './Companies.css';
+
+import _ from 'lodash';
 
 class Brands extends Component {
 
@@ -13,6 +13,31 @@ class Brands extends Component {
 
   }
 
+  defineManagers(ids) {
+  	// console.log(ids);
+  	let _this = this;
+
+
+  		var managers = [];
+  		_.forEach(ids,  function(id, i)  {
+  			// console.log(id, _this.props);
+  			_.forEach(_this.props.managers,  function(obj, i)  {
+  				// console.log(obj.id);
+  				if (obj.id == id) {
+  					managers.push(obj.name + ', ');
+  					return false;
+  				}
+
+  			});
+  		});
+  		// console.log(managers);
+  		// managers.push(managers);
+  	return managers;
+
+
+  }
+
+
   renderList (argument) {
 	  const brands = this.props.data;
 	  // console.log( brands );
@@ -20,11 +45,13 @@ class Brands extends Component {
 	 	return brands.map((br, index) =>
 	  	<div key={index} onClick={() => this.brandClick({br}, {index})}>
 	  	<div>{br.name}</div>
-	  	<div>{(br.managers)}</div>
+	  	{/*<div>{(br.managers)}</div>*/}
+	  	<div>{this.defineManagers(br.managers)}</div>
 
 	  	</div>
 	  	);
   }
+
 
 
   render() {

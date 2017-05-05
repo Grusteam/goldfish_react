@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './Companies.css';
-
 class Companies extends Component {
 
    constructor(props) {

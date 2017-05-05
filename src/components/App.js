@@ -1886,8 +1886,8 @@ class App extends Component {
 
 		this.companies = data.data.companies;
 		this.brands = data.data.brands;
-		// this.content = data.data.brands.content;
 		this.managers = data.data.managers;
+		this.allContent = data.data.content;
 
 		this.state = {
 			companies: this.companies,
@@ -1954,32 +1954,6 @@ class App extends Component {
 
 
 
-	defineManagers(ids) {
-
-
-		var companyBrandasManagers = [];
-		_.forEach(this.state.currentBrands,  function(brand, i)  {
-			// console.log(brand);
-			var managers = [];
-			_.forEach(brand.managers,  function(id, i)  {
-				// console.log(id);
-				_.forEach(this.managers,  function(obj, i)  {
-					if (obj.id == id) {
-						managers.push(obj.name);
-						return false;
-					}
-
-				});
-			});
-			companyBrandasManagers.push(managers);
-		});
-		return (companyBrandasManagers);
-
-
-	}
-
-
-
 
 	defineContent(c) {
 
@@ -1990,8 +1964,8 @@ class App extends Component {
 	  <div className="App">
 
 	   <Companies data = {this.companies} companyClick={this.companyClick.bind(this)}/>
-	   <Brands data = {this.state.currentBrands} brandClick={this.brandClick.bind(this)}/>
-	   <Docs data = {this.brands[this.state.currentBrand].content[this.state.currentDoctype]} docTypeClick={this.docTypeClick.bind(this)}/>
+	   <Brands data = {this.state.currentBrands} managers={this.managers} brandClick={this.brandClick.bind(this)}/>
+	   <Docs content = {this.allContent[this.state.currentDoctype]} ids = {this.brands[this.state.currentBrand].content[this.state.currentDoctype]} docTypeClick={this.docTypeClick.bind(this)} type={this.state.currentDoctype} />
 
 	  </div>
 
